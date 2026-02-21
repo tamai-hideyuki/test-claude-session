@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新横浜→広島 旅のおとも</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="route-badge">
+        <span class="station-from">新横浜</span>
+        <span class="shinkansen-icon">🚅</span>
+        <span class="station-to">広島</span>
+      </div>
+      <h1>旅のおとも</h1>
+      <p class="subtitle">新幹線の道中を美味しく楽しもう</p>
+    </div>
+  </header>
+
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="roulette">
+      <span class="tab-icon">🎰</span>
+      <span class="tab-label">ご当地グルメルーレット</span>
+    </button>
+    <button class="tab-btn" data-tab="ekiben">
+      <span class="tab-icon">🍱</span>
+      <span class="tab-label">駅弁セレクター</span>
+    </button>
+  </nav>
+
+  <main class="main">
+    <!-- ご当地グルメルーレット -->
+    <section id="roulette" class="tab-content active">
+      <div class="section-intro">
+        <h2>広島ご当地グルメルーレット</h2>
+        <p>広島で何を食べるか迷ったら、ルーレットにおまかせ！</p>
+      </div>
+
+      <div class="roulette-container">
+        <div class="roulette-window">
+          <div class="roulette-highlight"></div>
+          <div class="roulette-strip" id="rouletteStrip">
+            <!-- JS で動的に生成 -->
+          </div>
+        </div>
+
+        <button class="spin-btn" id="spinBtn">
+          <span class="spin-btn-text">まわす！</span>
+        </button>
+      </div>
+
+      <div class="result-card hidden" id="resultCard">
+        <div class="result-emoji" id="resultEmoji"></div>
+        <h3 class="result-name" id="resultName"></h3>
+        <p class="result-area" id="resultArea"></p>
+        <p class="result-desc" id="resultDesc"></p>
+        <div class="result-tags" id="resultTags"></div>
+        <p class="result-suggestion">次はこれ食べよう！</p>
+      </div>
+
+      <div class="category-filter">
+        <p class="filter-label">カテゴリで絞り込み：</p>
+        <div class="filter-buttons" id="groumetFilters">
+          <button class="filter-btn active" data-category="all">すべて</button>
+          <button class="filter-btn" data-category="麺">🍜 麺</button>
+          <button class="filter-btn" data-category="ごはん">🍚 ごはん</button>
+          <button class="filter-btn" data-category="粉もの">🥞 粉もの</button>
+          <button class="filter-btn" data-category="海鮮">🦪 海鮮</button>
+          <button class="filter-btn" data-category="スイーツ">🍰 スイーツ</button>
+          <button class="filter-btn" data-category="その他">🍛 その他</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 駅弁セレクター -->
+    <section id="ekiben" class="tab-content">
+      <div class="section-intro">
+        <h2>駅弁セレクター</h2>
+        <p>新横浜〜広島の途中駅で買える名物駅弁を紹介！</p>
+      </div>
+
+      <!-- 路線図 -->
+      <div class="route-map">
+        <div class="route-line"></div>
+        <div class="route-stations" id="routeStations">
+          <!-- JS で動的に生成 -->
+        </div>
+      </div>
+
+      <!-- 好みフィルター -->
+      <div class="ekiben-filters">
+        <p class="filter-label">好みで絞り込み：</p>
+        <div class="filter-buttons" id="ekibenTagFilters">
+          <button class="filter-btn active" data-tag="all">すべて</button>
+          <button class="filter-btn" data-tag="肉">🥩 肉</button>
+          <button class="filter-btn" data-tag="魚介">🐟 魚介</button>
+          <button class="filter-btn" data-tag="定番">⭐ 定番</button>
+          <button class="filter-btn" data-tag="ご当地">📍 ご当地</button>
+        </div>
+      </div>
+
+      <!-- 駅弁リスト -->
+      <div class="ekiben-list" id="ekibenList">
+        <!-- JS で動的に生成 -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>新横浜→広島 新幹線の旅を楽しもう 🚅</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
